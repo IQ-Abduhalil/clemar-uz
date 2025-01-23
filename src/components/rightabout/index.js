@@ -1,0 +1,1 @@
+export { RightAbout } from "./RightAbout";
