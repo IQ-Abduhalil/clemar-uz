@@ -9,7 +9,7 @@ export function ProductsPage() {
   const navigate = useNavigate();
   const array = arr;
   return (
-    <section>
+    <section id="productspage">
       <div className="container mx-auto px-4 md:px-8 pt-28 md:pt-44">
         <Link
           to={navigate(-1)}

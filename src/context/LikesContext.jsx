@@ -3,11 +3,12 @@ import { createContext, useState } from "react";
 export const LikeContext = createContext();
 
 export function LikeContextProvider({ children }) {
-  const [like, setLike] = useState(0);
+  const [count, setCount] = useState(0);
+  const [likes, setLikes] = useState();
 
   let values = {
-    like: like,
-    setLike: setLike,
+    count,
+    setCount,
   };
 
   return <LikeContext.Provider value={values}>{children}</LikeContext.Provider>;

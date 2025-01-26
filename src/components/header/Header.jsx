@@ -6,14 +6,26 @@ import Clemar from "../../assets/icons/clemar-logo.svg";
 import MenuBtn from "../../assets/icons/menu-logo.svg";
 import Like from "../../assets/icons/like.svg";
 import Search from "../../assets/icons/Search.svg";
+import { useContext, useRef, useState } from "react";
+import { LikeContext } from "../../context/LikesContext";
+import CloseLogo from "../../assets/icons/close.png";
 
 export function Header() {
-  const navigate = useNavigate();
-  const onNavigate = (e) => {
-    e.target.value === "home" ? navigate("/") : navigate("/category");
+  const [query, setQuery] = useState("");
+
+  const { count } = useContext(LikeContext);
+  const [menus, setMenus] = useState(false);
+
+  const handleMenuOpen = () => {
+    setMenus(true);
+    console.log(menus);
   };
+  const handleClose = () => {
+    setMenus(false);
+  };
+
   return (
-    <header className="fixed w-full bg-white">
+    <header id="header" className="fixed w-full bg-white">
       <div className="bg-slate-100 py-6">
         <div className="container px-4 md:px-8 mx-auto">
           <div className="header__top flex items-center justify-between">
@@ -47,10 +59,37 @@ export function Header() {
               </select>
             </div>
 
-            <button className="inline-block md:hidden">
-              <img src={MenuBtn} alt="menu" />
-            </button>
-
+            <div>
+              <button
+                onClick={handleMenuOpen}
+                className="inline-block md:hidden"
+              >
+                <img src={MenuBtn} alt="menu" />
+              </button>
+              <ul
+                className={`${
+                  menus == true
+                    ? "fixed flex-col top-6  bg-gray-100 p-1 rounded-md right-4 md:hidden"
+                    : "hidden"
+                }`}
+              >
+                <li onClick={handleClose} className="justify-self-end">
+                  <img src={CloseLogo} width="20px" height="20px" alt="close" />
+                </li>
+                <li onClick={handleClose}>
+                  <Link to="/">Home</Link>
+                </li>
+                <li onClick={handleClose}>
+                  <Link to="/about">About</Link>
+                </li>
+                <li onClick={handleClose}>
+                  <Link to="/news">News</Link>
+                </li>
+                <li onClick={handleClose}>
+                  <Link to="/category">Category</Link>
+                </li>
+              </ul>
+            </div>
             <div className="hidden md:flex items-center gap-10">
               <Link to="#" className="flex items-center gap-1">
                 <img src={Instagram} alt="insta" />
@@ -86,10 +125,10 @@ export function Header() {
           <Link to="/">
             <img src={Clemar} alt="clemar" />
           </Link>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 p-2 bg-gray-100 rounded-md">
             <img src={MenuBtn} alt="menu" />
-            <select className="hover:text-gray-500 cursor-pointer">
-              <option value="1">Поломоичные Машины </option>
+            <select className="hover:text-gray-500 bg-gray-100 cursor-pointer">
+              <option value="1">Katalog</option>
               <option value="2">Уборный инвентар</option>
               <option value="3">Профессионалные </option>
               <option value="4">Моющыесредства</option>
@@ -101,6 +140,7 @@ export function Header() {
 
           <div className="flex items-center">
             <input
+              onChange={(e) => setQuery(e.target.value)}
               className="py-2   ps-4 outline-none"
               type="text"
               id="search"
@@ -115,6 +155,7 @@ export function Header() {
           </div>
 
           <Link to="/category" className="flex items-center gap-1">
+            <span>{count}</span>
             <img src={Like} alt="like" />
             <p className="hover:text-slate-500 transition-all">Sevimlilar</p>
           </Link>

@@ -16,7 +16,7 @@ export function Categoryin() {
   const data = arr;
   const params = useParams();
   return (
-    <section className="pt-28 md:pt-44">
+    <section id="product" className="pt-28 md:pt-44">
       <div className="container mx-auto px-4 md:px-8 pb-20">
         <div className="flex flex-wrap items-center gap-8 mb-8">
           <Link

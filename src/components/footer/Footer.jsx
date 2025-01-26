@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="bg-cyan-700">
+    <footer id="footer" className="bg-cyan-700">
       <div className="container mx-auto px-4 md:px-8 py-10">
         <div className="flex flex-wrap gap-20 items-center">
           <div>
@@ -19,14 +19,11 @@ export function Footer() {
             <p className="text-base text-white font-semibold mb-5">
               +998 98 998 99 77
             </p>
-            <Link className="flex gap-2 mb-5">
+            <Link to="/about" className="flex gap-2 mb-5">
               <img src={Locat} alt="logo" />
-              <Link
-                to="/about"
-                className="text-xs text-white hover:text-slate-200"
-              >
+              <p className="text-xs text-white hover:text-slate-200">
                 Bizning dokonlar
-              </Link>
+              </p>
             </Link>
             <Link to="/" className="flex gap-2 mb-5">
               <img src={Messages} alt="logo" />

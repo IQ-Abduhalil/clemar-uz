@@ -2,7 +2,7 @@ import React from "react";
 
 export function AboutSection() {
   return (
-    <section>
+    <section id="aboutsection">
       <div className="container mx-auto px-4 md:px-8 pb-14 md:pb-20">
         <p className="text-xl sm:text-3xl font-bold mb-9">F.A.Q.</p>
         <div>
