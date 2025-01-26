@@ -2,12 +2,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { arr } from "../../Constants";
 import Like from "../../assets/icons/like.svg";
 import Prev from "../../assets/icons/change-logo.svg";
+import { useContext } from "react";
+import { LikeContext } from "../../context/LikesContext";
 
 export function Products() {
+  const { count, setCount } = useContext(LikeContext);
+
+  const handleLike = () => {
+    setCount(count + 1);
+  };
   const array = arr;
   const navigate = useNavigate();
   return (
-    <section>
+    <section id="productssection">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between mb-6">
           <p className="md:text-4xl text-2xl font-medium">Top tovarlar</p>
@@ -26,13 +33,13 @@ export function Products() {
                   <p className="bg-white text-sm px-12 py-2 rounded-br-md">
                     {data.text}
                   </p>
-                  <Link to={`/category/${data.id}`}>
+                  <button onClick={handleLike}>
                     <img
-                      className="mr-3 p-1.5 bg-white rounded-md"
+                      className="mr-3 p-1.5 mt-[-15px] bg-white rounded-md"
                       src={Like}
                       alt="like"
                     />
-                  </Link>
+                  </button>
                 </div>
                 <img className="px-12" src={data.img} alt="image" />
               </div>

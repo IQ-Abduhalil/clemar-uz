@@ -6,14 +6,16 @@ import Img3 from "../../assets/images/comp3.png";
 
 export function CompanySect() {
   return (
-    <section>
+    <section id="companysection">
       <div className="container mx-auto px-4 md:px-8 py-20 md:py-32">
         <p className="text-lg sm:text-2xl font-bold text-cyan-600 mb-8 px-12 md:px-32">
           Bizga ishonch bildirgan kompaniyalar
         </p>
-        <div className="flex flex-wrap gap-3 justify-between items-center  ">
+        <div className="flex flex-wrap justify-center gap-2  md:justify-between items-center  ">
           <Link>
             <img
+              width="280px"
+              height="100px"
               className="py-7 px-8 rounded-xl bg-cyan-800 transition-all hover:bg-cyan-700"
               src={Img1}
               alt="logo"
@@ -21,20 +23,26 @@ export function CompanySect() {
           </Link>
           <Link>
             <img
-              className="py-7 px-8 rounded-xl bg-cyan-800 transition-all hover:bg-cyan-700"
+              width="280px"
+              height="100px"
+              className="py-4 px-8 rounded-xl bg-cyan-800 transition-all hover:bg-cyan-700"
               src={Img2}
               alt="logo"
             />
           </Link>
           <Link>
             <img
-              className="py-7 px-8 rounded-xl bg-cyan-800 transition-all hover:bg-cyan-700"
+              width="280px"
+              height="100px"
+              className="py-1 px-8 rounded-xl bg-cyan-800 transition-all hover:bg-cyan-700"
               src={Img3}
               alt="logo"
             />
           </Link>
           <Link>
             <img
+              width="280px"
+              height="100px"
               className="py-7 px-8 rounded-xl bg-cyan-800 transition-all hover:bg-cyan-700"
               src={Img1}
               alt="logo"
