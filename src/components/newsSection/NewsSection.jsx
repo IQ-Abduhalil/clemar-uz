@@ -66,7 +66,7 @@ export function NewsSection() {
             </div>
           </div>
           <div className="cards flex flex-wrap justify-center md:justify-between">
-            <div className="p-3">
+            <div data-aos="flip-right" className="p-3">
               <img className="mb-6" src={Img2} alt="img" />
               <p className="mb-6 text-lg max-w-[322px] font-semibold">
                 What should be the arrangement of furniture in the bathroom?
@@ -82,7 +82,7 @@ export function NewsSection() {
                 Read more
               </Link>
             </div>
-            <div className="p-3">
+            <div data-aos="flip-right" className="p-3">
               <img className="mb-6" src={Img3} alt="img" />
               <p className="mb-6 text-lg max-w-[322px] font-semibold">
                 What should be the arrangement of furniture in the bathroom?
@@ -98,7 +98,7 @@ export function NewsSection() {
                 Read more
               </Link>
             </div>
-            <div className="p-3">
+            <div data-aos="flip-right" className="p-3">
               <img className="mb-6" src={Img4} alt="img" />
               <p className="mb-6 text-lg max-w-[322px] font-semibold">
                 What should be the arrangement of furniture in the bathroom?
@@ -114,7 +114,7 @@ export function NewsSection() {
                 Read more
               </Link>
             </div>
-            <div className="p-3">
+            <div data-aos="flip-right" className="p-3">
               <img className="mb-6" src={Img5} alt="img" />
               <p className="mb-6 text-lg max-w-[322px] font-semibold">
                 What should be the arrangement of furniture in the bathroom?

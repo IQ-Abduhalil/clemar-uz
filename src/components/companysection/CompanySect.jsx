@@ -12,7 +12,7 @@ export function CompanySect() {
           Bizga ishonch bildirgan kompaniyalar
         </p>
         <div className="flex flex-wrap justify-center gap-2  md:justify-between items-center  ">
-          <Link>
+          <Link data-aos="flip-left">
             <img
               width="280px"
               height="100px"
@@ -21,7 +21,7 @@ export function CompanySect() {
               alt="logo"
             />
           </Link>
-          <Link>
+          <Link data-aos="flip-left">
             <img
               width="280px"
               height="100px"
@@ -30,7 +30,7 @@ export function CompanySect() {
               alt="logo"
             />
           </Link>
-          <Link>
+          <Link data-aos="flip-left">
             <img
               width="280px"
               height="100px"
@@ -39,7 +39,7 @@ export function CompanySect() {
               alt="logo"
             />
           </Link>
-          <Link>
+          <Link data-aos="flip-left">
             <img
               width="280px"
               height="100px"

@@ -4,19 +4,28 @@ import Like from "../../assets/icons/like.svg";
 import Prev from "../../assets/icons/change-logo.svg";
 import { RightAbout } from "../../components/rightabout/RightAbout";
 import Back from "../../assets/icons/back-logo.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { addLike } from "../../redux/Action/Action";
+import { useEffect } from "react";
 
 export function ProductsPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const likes = useSelector((state) => state.likeCard || []);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const array = arr;
   return (
     <section id="productspage">
       <div className="container mx-auto px-4 md:px-8 pt-28 md:pt-44">
-        <Link
-          to={navigate(-1)}
+        <button
+          onClick={() => navigate(-1)}
           className="flex gap-1 items-center decoration-1 underline mb-6"
         >
           <img src={Back} alt="back" /> <p>Ortga</p>
-        </Link>
+        </button>
         <div className="flex flex-wrap justify-center sm:flex-nowrap sm:gap-32">
           <RightAbout />
           <div className="flex justify-center sm:justify-between flex-wrap items-center pt-32">
@@ -27,13 +36,15 @@ export function ProductsPage() {
                     <p className="bg-white text-sm px-12 py-2 rounded-br-md">
                       {data.text}
                     </p>
-                    <Link>
+                    <button onClick={() => dispatch(addLike(data?.id))}>
                       <img
-                        className="mr-3 p-1.5 bg-white rounded-md"
+                        className={`mr-3 p-1 mt-[-15px] rounded-md ${
+                          likes?.includes(data?.id) ? "bg-red-500" : "bg-white"
+                        }`}
                         src={Like}
                         alt="like"
                       />
-                    </Link>
+                    </button>
                   </div>
                   <img className="px-12" src={data.img} alt="image" />
                 </div>

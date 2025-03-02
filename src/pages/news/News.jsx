@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Back from "../../assets/icons/back-logo.svg";
 import Img from "../../assets/images/news-hero.png";
 
 export function News() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const navigate = useNavigate();
   const handleBackHome = () => {
     navigate("/");

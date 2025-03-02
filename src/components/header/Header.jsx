@@ -5,15 +5,22 @@ import Instagram from "../../assets/icons/instagram.svg";
 import Clemar from "../../assets/icons/clemar-logo.svg";
 import MenuBtn from "../../assets/icons/menu-logo.svg";
 import Like from "../../assets/icons/like.svg";
-import Search from "../../assets/icons/Search.svg";
-import { useContext, useRef, useState } from "react";
-import { LikeContext } from "../../context/LikesContext";
+import { useState } from "react";
 import CloseLogo from "../../assets/icons/close.png";
+import { useSelector } from "react-redux";
+import "../../i18n";
+import { useTranslation } from "react-i18next";
 
 export function Header() {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (event) => {
+    i18n.changeLanguage(event.target.value);
+  };
   const [query, setQuery] = useState("");
 
-  const { count } = useContext(LikeContext);
+  const likes = useSelector((state) => state.likeCard);
+
   const [menus, setMenus] = useState(false);
 
   const handleMenuOpen = () => {
@@ -25,14 +32,14 @@ export function Header() {
   };
 
   return (
-    <header id="header" className="fixed w-full bg-white">
+    <header id="header" className="fixed z-50 w-full bg-white">
       <div className="bg-slate-100 py-6">
         <div className="container px-4 md:px-8 mx-auto">
           <div className="header__top flex items-center justify-between">
             <div className="flex gap-2 items-center">
               <span className="flex gap-1 items-center">
                 <img src={Logo} alt="location" />{" "}
-                <p className="text-sm font-normal text-gray-600">Lokatsiya:</p>
+                <p className="text-sm font-normal text-gray-600">{t("loc")}</p>
               </span>
               <select className="bg-inherit">
                 <option value="toshkent" className="text-sm font-medium">
@@ -91,29 +98,40 @@ export function Header() {
               </ul>
             </div>
             <div className="hidden md:flex items-center gap-10">
-              <Link to="#" className="flex items-center gap-1">
+              <Link
+                to="https://www.instagram.com"
+                className="flex items-center gap-1"
+              >
                 <img src={Instagram} alt="insta" />
                 <p className="text-sm font-normal hover:text-gray-500 transition-all">
                   Cleanmarket_uz
                 </p>
               </Link>
 
-              <Link to="#" className="flex items-center gap-1">
+              <Link
+                to="https://t.me/WD_Abduhalil"
+                className="flex items-center gap-1"
+              >
                 <img src={Telegram} alt="telg" />
                 <p className="text-sm font-normal hover:text-gray-500 transition-all">
                   t.me/Clean_market
                 </p>
               </Link>
 
-              <p className="text-base hidden lg:inline-block font-semibold text-slate-400">
-                +998 71 700 02
-              </p>
+              <address className="text-base hidden lg:inline-block font-semibold text-slate-400">
+                <a href="tel:+9987170002">+998 71 700 02</a>
+              </address>
 
-              <select className="text-sm font-normal bg-inherit" id="">
-                <option className="bg-slate-500" value="ru">
-                  Ru
+              <select
+                onChange={changeLanguage}
+                value={i18n.language}
+                className="text-sm font-normal bg-inherit"
+                id=""
+              >
+                <option className="bg-slate-500" value="en">
+                  En
                 </option>
-                <option value="uz">Uz</option>
+                <option value="ru">Ru</option>
               </select>
             </div>
           </div>
@@ -125,39 +143,13 @@ export function Header() {
           <Link to="/">
             <img src={Clemar} alt="clemar" />
           </Link>
-          <div className="flex items-center gap-1 p-2 bg-gray-100 rounded-md">
-            <img src={MenuBtn} alt="menu" />
-            <select className="hover:text-gray-500 bg-gray-100 cursor-pointer">
-              <option value="1">Katalog</option>
-              <option value="2">Уборный инвентар</option>
-              <option value="3">Профессионалные </option>
-              <option value="4">Моющыесредства</option>
-              <option value="5">Поломоичные Машины</option>
-              <option value="6">УПрофессионал</option>
-              <option value="7">УМоющыесредства</option>
-            </select>
-          </div>
 
-          <div className="flex items-center">
-            <input
-              onChange={(e) => setQuery(e.target.value)}
-              className="py-2   ps-4 outline-none"
-              type="text"
-              id="search"
-              placeholder="Qidiruv"
-            />
-            <label
-              htmlFor="search"
-              className="hidden lg:block py-2 px-11 bg-slate-200 rounded-r-md cursor-pointer  transition-all hover:bg-slate-100"
-            >
-              <img src={Search} alt="search" />
-            </label>
-          </div>
-
-          <Link to="/category" className="flex items-center gap-1">
-            <span>{count}</span>
+          <Link to="#" className="flex items-center gap-1">
+            <span>{likes?.length}</span>
             <img src={Like} alt="like" />
-            <p className="hover:text-slate-500 transition-all">Sevimlilar</p>
+            <p className="hover:text-slate-500 transition-all">
+              {t("sevimli")}
+            </p>
           </Link>
         </div>
       </div>

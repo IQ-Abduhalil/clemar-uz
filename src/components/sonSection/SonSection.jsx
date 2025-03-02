@@ -4,7 +4,7 @@ import Img2 from "../../assets/images/son-img2.png";
 
 export function SonSection() {
   return (
-    <section id="sonsection">
+    <section data-aos="fade-left" id="sonsection">
       <div className="container mx-auto px-4 md:px-8 pb-16 md:pb-28">
         <p className="text-4xl font-bold mb-16">Biz sonlarda</p>
         <div className="justify-center flex flex-wrap items-center gap-20 mb-12">
