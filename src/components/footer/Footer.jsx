@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer id="footer" className="bg-cyan-700">
+    <footer data-aos="zoom-in-down" id="footer" className="bg-cyan-700">
       <div className="container mx-auto px-4 md:px-8 py-10">
         <div className="flex flex-wrap gap-20 items-center">
           <div>

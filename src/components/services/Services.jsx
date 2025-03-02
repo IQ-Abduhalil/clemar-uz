@@ -3,7 +3,7 @@ import ImgService from "../../assets/images/middleimg2.png";
 
 export function Services() {
   return (
-    <section id="servicesection" className="py-20">
+    <section data-aos="fade-right" id="servicesection" className="py-20">
       <div>
         <div className="container mx-auto px-4 md:px-8">
           <p className="text-4xl font-bold mb-10">Nega bizni tanlashadi?</p>

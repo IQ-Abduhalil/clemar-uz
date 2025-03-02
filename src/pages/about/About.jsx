@@ -1,8 +1,12 @@
 import AboutImg from "../../assets/images/about-img.png";
 import Tg from "../../assets/icons/telegram.svg";
 import Insta from "../../assets/icons/instagram.svg";
+import { useEffect } from "react";
 
 export function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="container mx-auto px-4 md:px-8 pt-24 md:pt-44">
