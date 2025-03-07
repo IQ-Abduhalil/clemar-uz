@@ -14,7 +14,7 @@ export function NewsSection() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between mb-6">
           <p className="text-2xl md:text-4xl font-bold">
-            Clean market yangiliklari
+            PureClean yangiliklari
           </p>
           <Link
             to="/news"

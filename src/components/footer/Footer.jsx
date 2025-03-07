@@ -13,7 +13,7 @@ export function Footer() {
         <div className="flex flex-wrap gap-20 items-center">
           <div>
             <p className="max-w-[190px] text-lg text-white mb-5">
-              Cleanmarket - Siz va yaqinlaringiz uchun!{" "}
+              PureClean - Siz va yaqinlaringiz uchun!{" "}
             </p>
             <p className="text-xs text-white ">Aloqa uchun</p>
             <p className="text-base text-white font-semibold mb-5">

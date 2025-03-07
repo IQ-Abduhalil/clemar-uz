@@ -16,7 +16,7 @@ export function AboutSection() {
             кабинами, или элегантными ванными на гнутых ножках.
           </p>
           <p className="text-base font-semibold mb-3">
-            оборудование Cleanmarket – всегда в тренде
+            оборудование Pureclean – всегда в тренде
           </p>
           <p className="text-base text-stone-600 mb-6">
             Коллекции, представленные в салоне, отлично сочетаются. Если вы
@@ -27,7 +27,7 @@ export function AboutSection() {
             кабинами, или элегантными ванными на гнутых ножках.
           </p>
           <p className="text-base font-semibold mb-3">
-            оборудование Cleanmarket – всегда в тренде
+            оборудование Pureclean – всегда в тренде
           </p>
           <p className="text-base text-stone-600 mb-6">
             Коллекции, представленные в салоне, отлично сочетаются. Если вы
@@ -38,7 +38,7 @@ export function AboutSection() {
             кабинами, или элегантными ванными на гнутых ножках.
           </p>
           <p className="text-base font-semibold mb-3">
-            оборудование Cleanmarket – всегда в тренде
+            оборудование Pureclean – всегда в тренде
           </p>
           <p className="text-base text-stone-600 mb-6">
             Коллекции, представленные в салоне, отлично сочетаются. Если вы

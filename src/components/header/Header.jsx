@@ -14,11 +14,6 @@ import { useTranslation } from "react-i18next";
 export function Header() {
   const { t, i18n } = useTranslation();
 
-  const changeLanguage = (event) => {
-    i18n.changeLanguage(event.target.value);
-  };
-  const [query, setQuery] = useState("");
-
   const likes = useSelector((state) => state.likeCard);
 
   const [menus, setMenus] = useState(false);
@@ -104,7 +99,7 @@ export function Header() {
               >
                 <img src={Instagram} alt="insta" />
                 <p className="text-sm font-normal hover:text-gray-500 transition-all">
-                  Cleanmarket_uz
+                  PureClean_uz
                 </p>
               </Link>
 
@@ -114,7 +109,7 @@ export function Header() {
               >
                 <img src={Telegram} alt="telg" />
                 <p className="text-sm font-normal hover:text-gray-500 transition-all">
-                  t.me/Clean_market
+                  t.me/Pure_Clean
                 </p>
               </Link>
 
@@ -122,7 +117,7 @@ export function Header() {
                 <a href="tel:+9987170002">+998 71 700 02</a>
               </address>
 
-              <select
+              {/* <select
                 onChange={changeLanguage}
                 value={i18n.language}
                 className="text-sm font-normal bg-inherit"
@@ -132,7 +127,7 @@ export function Header() {
                   En
                 </option>
                 <option value="ru">Ru</option>
-              </select>
+              </select> */}
             </div>
           </div>
         </div>
@@ -141,15 +136,12 @@ export function Header() {
       <div className="container hidden md:block px-4 md:px-8 mx-auto pb-5 ">
         <div className="header__bottom flex items-center justify-between py-3">
           <Link to="/">
-            <img src={Clemar} alt="clemar" />
+            <h4 className="font-semibold text-blue-600">PureClean</h4>
           </Link>
 
           <Link to="#" className="flex items-center gap-1">
             <span>{likes?.length}</span>
             <img src={Like} alt="like" />
-            <p className="hover:text-slate-500 transition-all">
-              {t("sevimli")}
-            </p>
           </Link>
         </div>
       </div>
